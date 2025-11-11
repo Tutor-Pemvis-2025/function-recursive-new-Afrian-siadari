@@ -11,25 +11,25 @@ public class TFUNC {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int n, hasil, ni;
+        int n, hasil;
 
         n = Integer.parseInt(input.nextLine());
-        hasil = f(n);
-        System.out.println("Bilangan yang dimasukkan: " + n);
-        System.out.println("Hasil perhitungan rekursif:" + hasil);
+        hasil = pertambahan(n);
+        System.out.println("Bilangan yang dimasukkan : " + n);
+        System.out.println("Hasil perhitungan rekursif : " + hasil);
     }
     
-    public static int f(int n) {
-        int total, i;
+    public static int pertambahan(int n) {
+        int hasil;
 
-        i = 0;
         if (n == 1) {
-            total = 1;
+            hasil = 1;
         } else {
-            total = n + f(n - 1);
+            hasil = pertambahan(n - 1) + n;
         }
         
-        return total;
+        return hasil;
     }
 }
+
 
