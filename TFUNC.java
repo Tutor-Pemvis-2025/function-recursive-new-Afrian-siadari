@@ -7,25 +7,29 @@
 import java.util.*;
 import java.lang.Math;
 
-public class JavaApplication {
+public class TFUNC {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int angka, hasil;
+        int n, hasil, ni;
 
-        angka = Integer.parseInt(input.nextLine());
-        hasil = hitungRekursif(angka);
+        n = Integer.parseInt(input.nextLine());
+        hasil = f(n);
+        System.out.println("Bilangan yang dimasukkan: " + n);
+        System.out.println("Hasil perhitungan rekursif:" + hasil);
     }
     
-    public static int hitungRekursif(int angka) {
-        int hasil;
+    public static int f(int n) {
+        int total, i;
 
-        if (angka == 1) {
-            hasil = 1;
+        i = 0;
+        if (n == 1) {
+            total = 1;
         } else {
-            hasil = angka + hitungRekursif(angka - 1);
+            total = n + f(n - 1);
         }
         
-        return hasil;
+        return total;
     }
 }
+
